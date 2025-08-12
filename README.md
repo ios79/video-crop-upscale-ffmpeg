@@ -56,35 +56,22 @@ video-crop-upscale-ffmpeg/
 
 1️⃣ Manual FFmpeg Commands
 
-
-
 Step 1: Detect crop area: "C:\\ffmpeg\\bin\\ffmpeg.exe" -i "input.mp4" -vf cropdetect -t 3 -f null - 2>crop.txt
-
-
-
 Step 2: Apply the suggested crop and upscale: "C:\\ffmpeg\\bin\\ffmpeg.exe" -y -i "input.mp4" -vf "crop=W:H:X:Y,scale=1280:1080" -c:v libx264 -crf 18 -preset medium -c:a copy "output.mp4"
-
 
 
 2️⃣ Automated PowerShell Script
 
 The included script automates detection and cropping.
 
-
-
 Usage: pwsh -File scripts\\crop\_upscale.ps1 -InputPath "C:\\path\\to\\video.mp4" -Scale "1280:1080"
-
-
 
 Example: pwsh -File scripts\\crop\_upscale.ps1 -InputPath "C:\\videos\\sample.mp4"
 
 
 
-| Before                         | After                        |
-
-| ------------------------------ | ---------------------------- |
-
-| !\[Before](examples/before.png) | !\[After](examples/after.png) |
+📷 Example Output
+<p align="center"> <img src="examples/before.png" alt="Before" width="45%" /> <img src="examples/after.png" alt="After" width="45%" /> </p>
 
 
 
